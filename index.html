@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Birthday Saima 🎉</title>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Baloo 2', cursive;
+      background: linear-gradient(to right, #fbc2eb, #a6c1ee);
+      color: #fff;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .container {
+      padding: 30px 20px;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 3em;
+      margin-bottom: 0.2em;
+      color: #fff;
+      text-shadow: 2px 2px 4px #000;
+      animation: floatText 3s infinite ease-in-out;
+    }
+
+    @keyframes floatText {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    img {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 4px solid #fff;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      margin-bottom: 20px;
+    }
+
+    .msg {
+      font-size: 1.3em;
+      background: rgba(0, 0, 0, 0.4);
+      padding: 15px;
+      border-radius: 15px;
+      display: inline-block;
+      animation: glow 2s infinite alternate;
+    }
+
+    @keyframes glow {
+      from { box-shadow: 0 0 10px #fff; }
+      to { box-shadow: 0 0 20px #ff8; }
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 1em;
+      color: #fceabb;
+    }
+
+    .group {
+      font-size: 1.1em;
+      margin-top: 15px;
+      color: #ffe3f4;
+    }
+
+    .hearts {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .hearts span {
+      position: absolute;
+      display: block;
+      width: 20px;
+      height: 20px;
+      background: url('https://emoji.slack-edge.com/T02NV0XUN/heart/8f4ef0f4ef3a287a.png') no-repeat center;
+      background-size: contain;
+      animation: fall 10s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 0.7;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 25px;
+      cursor: pointer;
+      background: #ff80ab;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    audio { display: none; }
+
+    canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+  </style>
+  <!-- Confetti Library -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://files.catbox.moe/3xjmeb.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
+  <div class="container">
+    <img src="https://i.ibb.co/932pZqSM/Messenger-creation-65-A620-EB-5-C37-4-DFE-A12-D-AD8-BFEEED6-B5.jpg" alt="Saima">
+    <h1>🎂 শুভ জন্মদিন Saima 🎉</h1>
+    <div class="msg">
+      তুমি যেন সবসময় এমনই হাসিখুশি থাকো,<br>
+      জীবন হোক তোমার রঙিন স্বপ্নে ভরা! 🌸<br><br>
+      ❤️  <strong>Johir</strong>
+    </div>
+
+    <div class="group">Group: FURFURI NAGAR 2.0</div>
+    <div class="footer">শুভ জন্মদিন Saima! 🎈</div>
+
+    <!-- Calibrate Button -->
+    <button id="calibrateBtn">🎉Click to Celebration !</button>
+  </div>
+
+  <!-- Floating Hearts -->
+  <div class="hearts">
+    <span style="left: 10%; animation-delay: 0s;"></span>
+    <span style="left: 30%; animation-delay: 1s;"></span>
+    <span style="left: 50%; animation-delay: 2s;"></span>
+    <span style="left: 70%; animation-delay: 3s;"></span>
+    <span style="left: 90%; animation-delay: 4s;"></span>
+  </div>
+
+  <!-- Confetti Canvas -->
+  <canvas></canvas>
+
+  <script>
+    const canvas = document.querySelector('canvas');
+    const myConfetti = confetti.create(canvas, { resize: true, useWorker: true });
+    document.getElementById('calibrateBtn').addEventListener('click', () => {
+      // Burst confetti in random directions
+      myConfetti({ particleCount: 200, spread: 160 });
+      myConfetti({ particleCount: 100, spread: 120, origin: { y: 0.6 } });
+    });
+  </script>
+</body>
+</html>
